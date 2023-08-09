@@ -1,0 +1,32 @@
+version: '3'
+services:
+    # db gui (phpmyadmin)
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    depends_on:
+      - mariadb
+    ports:
+      - "8082:80"
+    environment:
+      - PMA_HOST=mariadb
+      - PMA_PORT=3310
+
+  mariadb:
+    # platform: linux/x86_64 # for m1
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_TCP_PORT: 3310
+      MYSQL_ROOT_PASSWORD: micmickub
+      MYSQL_USER:  root 
+      MYSQL_PASSWORD: micmickub
+      MYSQL_DATABASE: next_full_stack
+    ports:
+      - "3310:3310"
+    volumes:
+      - my-db:/var/lib/mysql
+
+volumes:
+  # dependencies:
+  my-db:
