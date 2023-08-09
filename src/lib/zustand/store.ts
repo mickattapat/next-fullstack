@@ -1,4 +1,4 @@
-import { IUser } from '@/app/model/user.interface'
+import { IUser } from '@/app/model/user.model'
 import { Session } from 'next-auth'
 import { create } from 'zustand'
 

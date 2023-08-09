@@ -10,7 +10,7 @@ import {
   rem,
 } from "@mantine/core";
 import { Session } from "next-auth";
-import { IUser } from "@/app/model/user.interface";
+import { IUser } from "@/app/model/user.model";
 
 export function User({ user }: { user: IUser | null }) {
   const theme = useMantineTheme();

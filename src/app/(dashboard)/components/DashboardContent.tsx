@@ -1,6 +1,6 @@
 "use client";
 
-import { IUser } from "@/app/model/user.interface";
+import { IUser } from "@/app/model/user.model";
 import { useAuthStore } from "@/lib/zustand/store";
 import { Session } from "next-auth";
 import React from "react";
